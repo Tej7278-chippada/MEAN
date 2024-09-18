@@ -1,0 +1,41 @@
+select {
+	font-size: 13px;
+	border-radius: 11px;
+}
+
+.panel-style {
+	color: rgb(27, 26, 26);
+	background-color: white;
+	border-color: rgb(201, 198, 198);
+}
+
+.panel-headstyle {
+	font-family: 'Courier New', Courier, monospace;
+	font-size: 23px;
+	text-align: center;
+	background-color: white;
+	border-color: rgb(255, 255, 255);
+	color: rgb(22, 22, 22);
+	font-weight: bold;
+}
+
+.error-message {
+	font-size: 12px;
+	text-align: center;
+}
+
+.panel-table-style {
+	color: rgb(27, 26, 26);
+	background-color: white;
+	border-color: rgb(201, 198, 198);
+}
+
+.label {
+	font-size: 13px;
+	color: rgb(22, 22, 22);
+	margin: -6px;
+}
+
+.custom-report {
+	padding-top: 35px;
+}

@@ -1,0 +1,252 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<nav class="nav navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+
+    <div class="navbar-header">
+      <a class="navbar-brand brand" href="#">
+        Swift
+        <span class="custom-brand">Courier</span>
+      </a>
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li class="nav-item" *ngIf="router.url=='/register' ||router.url=='/'|| router.url=='/login'">
+          <a routerLink="/" [routerLinkActive]="['active']">
+            <i class="fa fa-home"></i>&nbsp;Home</a>
+        </li>
+        <li class="nav-item"
+          *ngIf="router.url=='/report'||router.url=='/sendcourier'||router.url=='/home'||router.url =='/trackorder'">
+          <a [routerLink]="['/home']" [routerLinkActive]="['active']">
+            <i class="fa fa-home"></i>&nbsp;Home</a>
+        </li>
+        <li class="nav-item" *ngIf="router.url=='/register' ||router.url=='/'|| router.url=='/login'">
+          <a [routerLink]="['/login']" [routerLinkActive]="['active']">
+            <i class="glyphicon glyphicon-log-in"></i>&nbsp;Login</a>
+        </li>
+        <li class="nav-item" *ngIf="router.url=='/register' ||router.url=='/'|| router.url=='/login'">
+          <a [routerLink]="['/register']" [routerLinkActive]="['active']">
+            <i class="glyphicon glyphicon-user"></i>&nbsp;Register</a>
+        </li>
+        <li *ngIf="router.url=='/home'||router.url=='/report'||router.url=='/sendcourier'||router.url =='/trackorder'">
+          <a [routerLink]="['/']" (click)="logout()" [routerLinkActive]="['active']">
+            <i class="glyphicon glyphicon-log-out"></i>&nbsp;Logout</a>
+        </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-left">
+        <li class="nav-item">
+          <a [routerLink]="['/report']" [routerLinkActive]="['active']">
+            <i class="fa fa-table"></i>&nbsp;Generate Report</a>
+        </li>
+        <li class="nav-item">
+          <a [routerLink]="['/sendcourier']" [routerLinkActive]="['active']">
+            <i class="fa fa-send"></i>&nbsp;Send Courier</a>
+        </li>
+        <li class="nav-item">
+          <a [routerLink]="['/trackorder']">
+            <i class="fa fa-map-marker"></i>&nbsp;Track Shipment</a>
+        </li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" [routerLinkActive]="['active']">
+            Service Guide
+            <span class="caret"></span>
+          </a>
+          <ul class="dropdown-menu">
+            <li>
+              <a>Conditions for Shipment</a>
+            </li>
+            <li>
+              <a>Risk and Fuel Surcharge</a>
+            </li>
+            <li>
+              <a>Price and Times</a>
+            </li>
+            <li>
+              <a>Location Finder</a>
+            </li>
+            <li>
+              <a>Goods and Services Tax</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+</nav>
+
+<div class="container-fluid" *ngIf="router.url!='/' && router.url!='/home'">
+  <div class="row image-banner">
+    <img src="../assets/Picture1.png" alt="" class="img-responsive" width="1370">
+  </div>
+</div>
+
+<div *ngIf="router.url=='/'">
+  <div class="col-md-12 custom-carousel">
+    <div class="row">
+      <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+          <li data-target="#myCarousel" data-slide-to="1"></li>
+          <li data-target="#myCarousel" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+          <div class="item active">
+            <div>
+              <img class="carousel-img" src="../assets/image1.jpg" width="1350">
+            </div>
+            <div class="carousel-caption">
+              <h3>Secure Transport</h3>
+              <p>We promise assured and reliable tranport </p>
+            </div>
+          </div>
+
+          <div class="item">
+            <div>
+              <img class="carousel-img" src="../assets/image2.jpg" width="1350">
+            </div>
+            <div class="carousel-caption">
+              <h3>Global Delivery</h3>
+              <p>We offer our services through out the world</p>
+            </div>
+          </div>
+
+          <div class="item">
+            <div>
+              <img class="carousel-img" src="../assets/image3.jpg" width="1350">
+            </div>
+            <div class="carousel-caption">
+              <h3>Speed Delivery</h3>
+              <p>We guarantee speed and smooth delivery procedures</p>
+            </div>
+          </div>
+        </div>
+        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+          <span class="glyphicon glyphicon-chevron-left"></span>
+        </a>
+        <a class="right carousel-control" href="#myCarousel" data-slide="next">
+          <span class="glyphicon glyphicon-chevron-right"></span>
+        </a>
+      </div>
+    </div>
+  </div>
+  <br>
+  <br>
+
+  <div class="container-fluid ">
+    <div class="col-md-10 col-md-offset-1 col-sm-12  container-jumbotron">
+      <div class="jumbotron">
+        <div class="row">
+
+          <div class="col-sm-8">
+            <div class="row">
+              <div class="jumbotron-content-bottom">
+                Open a SwiftCourier account to take advantage of our services which aims to provide your courier
+                requirements. Register for
+                a SwiftCourier account by clicking the button given below. Let’s proceed!
+              </div>
+              <br>
+              <button class="btn custom-button" (click)=register()>Register</button>
+            </div>
+          </div>
+          
+          <div class="col-sm-4">
+            <div class="row img-register">
+              <img src="../assets/register.jpg" class="img-responsive" alt="" width="325px" height="200px">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container-fluid ">
+    <div class="col-md-10 col-md-offset-1 col-sm-12 container-jumbotron-send">
+      <div class="jumbotron">
+        <div class="row">
+
+          <div class="col-sm-4">
+            <div class="row">
+              <img src="../assets/explore.jpg" class="img-responsive" alt="" width="325px" height="200px">
+            </div>
+          </div>
+          <div class="col-sm-8">
+            <div class="row jumbotron-content-left">
+              <div class="jumbotron-content-bottom">
+                Our services provide opportunities for people, publics, industries and enterprises to get connected.
+                Walk around with SwiftCourier
+                to know about the interesting insights of products and services offered by us.
+              </div>
+              <br>
+              <div style="text-align:right;">
+                <button class="btn custom-button ">Explore More</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid">
+  <div class="row">
+    <router-outlet></router-outlet>
+  </div>
+</div>
+<hr>
+<div class="container-fluid footer-styling">
+  <div class="row">
+    <footer>
+      <div class="col-md-4 footer-distributed">
+        <h3 class="footer-heading">
+          <strong> SwiftCourier
+            <span> &copy; 2020</span>
+          </strong>
+        </h3>
+        <p class="footer-links">
+          <a>FAQ's</a>
+        </p>
+        <p class="footer-links">
+          <a>Careers</a>
+        </p>
+        <p class="footer-links">
+          <a>Privacy Policy</a>
+        </p>
+        <p class="footer-links">
+          <a>Cookie Policy</a>
+        </p>
+      </div>
+      <div class="col-md-4 footer-distributed-middle">
+        <h3 class="footer-heading">
+          <strong> Contact Us </strong>
+        </h3>
+        <p class="footer-links">
+          <i class="fa fa-phone"></i>&nbsp; +91-9001230009
+        </p>
+        <h3 class="footer-heading">
+          <strong>Follow SwiftCourier</strong>
+        </h3>
+        <span class="fa fa-facebook-square" style="font-size:28px"></span>&nbsp;
+        <span class="	fa fa-linkedin-square" style="font-size:28px"></span>&nbsp;
+        <span class=" fa fa-twitter-square" style="font-size:28px"></span>&nbsp;
+        <span class="fa fa-youtube-square" style="font-size:28px"></span>
+      </div>
+      <div class="col-md-4 footer-distributed-last">
+        <h3 class="footer-heading">
+          <strong> About Us </strong>
+        </h3>
+        <p class="footer-links">
+          SwiftCourier, aims to achieve world class courier delivery service backed by premium housing and storage. Here
+          we have a
+          dedicated team of professionals and advance technology.
+        </p>
+      </div>
+    </footer>
+  </div>
+</div>

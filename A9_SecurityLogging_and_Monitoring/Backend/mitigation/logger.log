@@ -1,0 +1,26 @@
+{"level":"warn","message":"Wrong password entered by userId divi","timestamp":"3/17/2022, 5:56:03 AM"}
+{"level":"error","message":"Error while login user","timestamp":"3/17/2022, 5:56:03 AM"}
+{"level":"info","message":"UserId must be between 4 to 15 characters","timestamp":"3/17/2022, 5:57:34 AM"}
+{"level":"error","message":"Error while login user","timestamp":"3/17/2022, 5:57:40 AM"}
+{"level":"warn","message":"Account Locked for userId 'tomj'","timestamp":"3/17/2022, 5:58:24 AM"}
+{"level":"error","message":"Error while login user","timestamp":"3/17/2022, 5:58:25 AM"}
+{"level":"warn","message":"Wrong password entered by userId Jerry","timestamp":"3/17/2022, 6:00:17 AM"}
+{"level":"error","message":"Error while login user","timestamp":"3/17/2022, 6:00:17 AM"}
+{"level":"warn","message":"Wrong password entered by userId Jerry","timestamp":"3/17/2022, 6:00:24 AM"}
+{"level":"error","message":"Error while login user","timestamp":"3/17/2022, 6:00:24 AM"}
+{"level":"warn","message":"Wrong password entered by userId Jerry","timestamp":"3/17/2022, 6:00:50 AM"}
+{"level":"error","message":"Error while login user","timestamp":"3/17/2022, 6:00:50 AM"}
+{"level":"warn","message":"Wrong password entered by userId Jerry","timestamp":"3/17/2022, 6:00:56 AM"}
+{"level":"error","message":"Error while login user","timestamp":"3/17/2022, 6:00:56 AM"}
+{"level":"warn","message":"Wrong password entered by userId Jerry","timestamp":"3/17/2022, 6:01:00 AM"}
+{"level":"error","message":"Error while login user","timestamp":"3/17/2022, 6:01:00 AM"}
+{"level":"warn","message":"Wrong password entered by userId Jerry","timestamp":"3/17/2022, 6:02:54 AM"}
+{"level":"error","message":"Error while login user","timestamp":"3/17/2022, 6:02:54 AM"}
+{"level":"warn","message":"Account Locked for userId 'Jerry'","timestamp":"3/17/2022, 6:03:12 AM"}
+{"level":"error","message":"Error while login user","timestamp":"3/17/2022, 6:03:12 AM"}
+{"level":"warn","message":"Wrong password entered by userId Jerry","timestamp":"3/17/2022, 6:04:00 AM"}
+{"level":"error","message":"Error while login user","timestamp":"3/17/2022, 6:04:00 AM"}
+{"level":"warn","message":"Wrong password entered by userId Jerry","timestamp":"3/17/2022, 6:04:01 AM"}
+{"level":"error","message":"Error while login user","timestamp":"3/17/2022, 6:04:01 AM"}
+{"level":"warn","message":"Account Locked for userId 'Jerry'","timestamp":"3/17/2022, 6:04:11 AM"}
+{"level":"error","message":"Error while login user","timestamp":"3/17/2022, 6:04:11 AM"}

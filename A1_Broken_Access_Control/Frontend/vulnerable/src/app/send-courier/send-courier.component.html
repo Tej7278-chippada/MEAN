@@ -1,0 +1,105 @@
+<div class="container-fluid" *ngIf="flag==true">
+  <div class="row">
+    <div class="col-md-4 col-md-offset-4 custom-register">
+      <div class="panel panel-primary panel-style">
+        <div class="panel-heading panel-headstyle">Send Courier</div>
+        <div class="panel-body">
+
+          <form class="form" #CourierForm="ngForm">
+            <div class="form-group">
+              <label for="name" class="label">Sender</label>
+              <input type="text" class="form-control" placeholder="Enter sender name" name="sender" [(ngModel)]="Courier.sender" required
+                #sender="ngModel">
+              <div class="text-danger input-error" *ngIf="sender.errors && (sender.dirty || sender.touched)">
+                <div [hidden]="!sender!.errors['required']">Sender Name is mandatory</div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="receiver" class="label">Receiver</label>
+              <input type="receiver" class="form-control" placeholder="Enter receiver name" name="receiver" #receiver="ngModel" required
+                [(ngModel)]="Courier.receiver">
+              <div class="text-danger" style="font-family: arial;font-size:12px" *ngIf="receiver.errors && (receiver.dirty || receiver.touched)">
+                <div [hidden]="!receiver!.errors['required']">Receiver Name is mandatory</div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="senderAddress" class="label">
+                Sender Address</label>
+              <textarea class="form-control" name="senderAddress" placeholder="Enter sender address" [(ngModel)]="Courier.senderAddress"
+                #senderAddress="ngModel" required></textarea>
+              <div class="text-danger" style="font-family: arial;font-size:12px" *ngIf="senderAddress.errors && (senderAddress.dirty || senderAddress.touched)">
+                <div [hidden]="!senderAddress!.errors['required']">Sender Address is mandatory</div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="receiverAddress" class="label">
+                Receiver Address</label>
+              <textarea class="form-control" name="receiverAddress" placeholder="Enter receiver address" required [(ngModel)]="Courier.receiverAddress"
+                #receiverAddress="ngModel"></textarea>
+              <div class="text-danger" style="font-family: arial;font-size:12px" *ngIf="receiverAddress.errors && (receiverAddress.dirty || receiverAddress.touched)">
+                <div [hidden]="!receiverAddress!.errors['required']">Receiver Address is mandatory</div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="senderCity" class="label">
+                Sender City
+              </label>
+              <select class="form-control" name="senderCity" [(ngModel)]="Courier.senderCity" required #senderCity="ngModel">
+                <option value="" disabled>--Select sender city--</option>
+                <option value="Bangalore">Bangalore</option>
+                <option value="Chennai">Chennai</option>
+                <option value="Pune">Pune</option>
+                <option value="Mysore">Mysore</option>
+              </select>
+              <div class="text-danger input-error" *ngIf="senderCity.errors && senderCity.touched">
+                <div [hidden]="!senderCity!.errors['required']">Sender City is mandatory</div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="receiverCity" class="label">
+                Receiver City</label>
+              <select class="form-control" name="receiverCity" [(ngModel)]="Courier.receiverCity" required #receiverCity="ngModel">
+                <option value="" disabled>--Select receiver city--</option>
+                <option value="Bangalore">Bangalore</option>
+                <option value="Chennai">Chennai</option>
+                <option value="Pune">Pune</option>
+                <option value="Mysore">Mysore</option>
+              </select>
+              <div class="text-danger input-error" *ngIf="receiverCity.errors && receiverCity.touched">
+                <div [hidden]="!receiverCity!.errors['required']">Receiver City is mandatory</div>
+              </div>
+
+            </div>
+            <br>
+            <div>
+              <button (click)="onSubmit()" class="btn btn-primary sendBtn">Accept Courier</button>
+            </div>
+          </form>
+
+          <h4 *ngIf='flag1' class="text-danger error-message">{{message}}</h4>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid" *ngIf="flag==false">
+  <div class="row">
+    <div class="col-md-4 col-md-offset-4 custom-register">
+      <div class="panel panel-primary panel-style">
+        <div class="panel-heading panel-headstyle">Thank you for choosing SwiftCourier!</div>
+        <div class="panel-body">
+          <p> Your courier will be picked up and delivered within 25 hours. You can use transanction Id
+            <strong>{{id}}</strong> to track your parcel.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div [ngStyle]="{'padding-bottom':flag==false ? '25px' : '0px' }">
+</div>

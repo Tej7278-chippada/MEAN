@@ -1,0 +1,142 @@
+<div *ngIf="loginBoolean==true" class="text-success success-register">
+  You have successfully registered, please login </div>
+
+
+<div class="container-fluid custom-login">
+  <div class="row">
+    <div class="col-md-4 col-md-offset-4">
+      <div class="panel panel-primary panel-style">
+        <div class="panel-heading panel-headstyle">Login</div>
+        <div class="panel-body">
+          <div *ngIf="forgotPwd">
+            <form #loginForm="ngForm" (ngSubmit)="validateSubmit()">
+              <div class="form-group">
+                <label class="label" for="userId">User Id</label>
+                <input type="text" class="form-control" id="userId" placeholder="Enter your user id"
+                  [(ngModel)]="login.userId" name="userId" #userId="ngModel" required>
+                <div class="text-danger input-error" *ngIf="userId.errors && (userId.dirty || userId.touched)">
+                  <div [hidden]="!userId.errors['required']">UserId is mandatory</div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="label" for="password">Password</label>
+                <input type="password" class="form-control" id="password" placeholder="Enter your password"
+                  [(ngModel)]="login.password" name="pass" #password="ngModel" required>
+                <div class="text-danger input-error" *ngIf="password.errors && (password.dirty || password.touched)">
+                  <div [hidden]="!password.errors['required']">Password is mandatory</div>
+                </div>
+              </div>
+              <br>
+              <div class=" btn-inline">
+                <button type="submit" [disabled]="!loginForm.valid" class="btn btn-primary">Login</button> &nbsp;
+                <button type="submit" (click)="forgotPassword()" class="btn btn-primary">Forgot Password</button>
+                &nbsp;
+
+                <br />
+              </div>
+            </form>
+            <div *ngIf="flag">
+              <h4 class="text-danger error-message">{{message}}</h4>
+            </div>
+          </div>
+          <div *ngIf="!forgotPwd">
+            <form #forgotForm="ngForm" (ngSubmit)="getOtp()">
+              <div class="form-group">
+                <label class="label" for="userId">User Id</label>
+                <input type="text" class="form-control" id="userId" placeholder="Enter your user id"
+                  [(ngModel)]="login.userId" name="userId" #userId="ngModel" required>
+                <div class="text-danger input-error" *ngIf="userId.errors && (userId.dirty || userId.touched)">
+                  <div [hidden]="!userId.errors['required']">UserId is mandatory</div>
+                </div>
+              </div>
+
+              <br>
+              <div>
+                <button type="submit" [disabled]="!forgotForm.valid" class="btn btn-primary">Get OTP</button> &nbsp;
+
+                <br />
+              </div>
+
+            </form>
+          </div>
+         <!-- </div> -->
+         <br>
+          <div *ngIf="otpFlag">
+
+            <div class="form-group">
+            <input class="form-control" type="text" id="otp" #otpvalue="ngModel" name="otp"
+              [(ngModel)]="otp"> <br />
+            <button type="button" class="btn btn-primary " (click)="validateOtp()">Login</button>
+          </div>
+          </div>
+          <div *ngIf="flag">
+            <h4 class="text-danger error-message">{{message}}</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- 
+
+<div *ngIf="forgot">
+  <div class="container-fluid custom-login">
+    <div class="row">
+      <div class="col-md-4 col-md-offset-4">
+        <div class="panel panel-primary panel-style">
+          <div class="panel-heading panel-headstyle">Login</div>
+          <div class="panel-body">
+            <div *ngIf="forgot">
+              <form #forgotForm="ngForm" (ngSubmit)="getOtp()">
+                <div class="form-group">
+                  <label class="label" for="userId">User Id</label>
+                  <input type="text" class="form-control" id="userId" placeholder="Enter your user id"
+                    [(ngModel)]="login.userId" name="userId" #userId="ngModel" required>
+                  <div class="text-danger input-error" *ngIf="userId.errors && (userId.dirty || userId.touched)">
+                    <div [hidden]="!userId.errors.required">UserId is mandatory</div>
+                  </div>
+                </div>
+
+                <br>
+                <div>
+                  <button type="submit" [disabled]="!forgotForm.valid" class="btn btn-primary">Get OTP</button> &nbsp;
+
+                  <br />
+                </div>
+
+              </form>
+            </div>
+
+            <div *ngIf="otpgot">
+              <div class="row">
+                <div class="col-md-12 ">
+                  <div class="panel">
+                    <div class="panel-heading panel-headstyle">Enter The OTP Recived</div>
+                    <div class="panel-body">
+
+                      <input style="border: 1px ghostwhite;background-color: aliceblue;width: 100%;height: 30px;"
+                        class="form-group" type="text" id="otp" #otp="ngModel" class="form-group" name="otp"
+                        [(ngModel)]="otp"> <br />
+                      <button type="button" class="btn btn-primary btn-lg" (click)="validateOtp()">Login</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+
+            <div *ngIf="flag">
+              <h4 class="text-danger error-message">{{message}}</h4>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+</div> -->

